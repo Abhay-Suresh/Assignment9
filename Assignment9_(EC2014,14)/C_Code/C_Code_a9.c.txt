@@ -1,0 +1,32 @@
+//Code written on January4, 2021
+// by Abhay Suresh
+//This C program is used to verify the obtained boolean eq(unsimplified) of the logic gate from Assignment 9 (EC2014,14)
+
+#include <stdio.h>
+
+//The  main function
+int main(void)
+{
+
+unsigned char  X=0x01,Y=0x01,Z=0x00;//inputs in hex	
+unsigned char one = 0x01;//used for displaying the output in bit
+unsigned char A,B,F;//outputs
+
+            A = ((~X)&Y)|((~Y)&X);
+            //XOR GATE
+            
+            B = (A&Z)|((~A)&(~Z));
+            //XNOR GATE
+            
+            F = A&B;
+            //Final output F (AND GATE)
+
+printf("The following is the Input for the Logic gate for the Assignment 9,represented using X,Y,Z\n\n");
+printf("X = %x  Y = %x  Z = %x",one&X,one&Y,one&Z);//Intput XYZ
+printf(" \n");
+printf("\n The output of the logic gate, ");
+printf("F = %x\n" ,one&F);//Output F
+printf("  \n");
+printf("Similarly,rest of the values of input XYZ has been pre verified using this C program");
+return 0;
+}
